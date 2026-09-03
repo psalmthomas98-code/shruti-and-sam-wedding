@@ -312,9 +312,9 @@
 
       <sc-if value="{{ isStep3 }}" hint-placeholder-val="{{ true }}">
         <div style="flex:1; display:flex; flex-direction:column; animation:fadeup .4s ease both;">
-          <div style="font-size:10px; letter-spacing:.24em; text-transform:uppercase; color:#8A7A5E;">Three of three</div>
-          <div style="font-family:'Cormorant Garamond',serif; font-size:32px; line-height:1.15; margin-top:8px;">A word for the newlyweds</div>
-          <textarea value="{{ note }}" onChange="{{ onNote }}" placeholder="A note for Shruti &amp; Sam" style="margin-top:18px; background:transparent; border:1px solid #574936; padding:13px 14px; color:#F1E9D9; font-size:14px; min-height:120px; resize:none;"></textarea>
+          <div style="font-size:10px; letter-spacing:.24em; text-transform:uppercase; color:#8A7A5E;">{{ step3Label }}</div>
+          <div style="font-family:'Cormorant Garamond',serif; font-size:32px; line-height:1.15; margin-top:8px;">{{ step3Title }}</div>
+          <textarea value="{{ note }}" onChange="{{ onNote }}" placeholder="{{ step3Placeholder }}" style="margin-top:18px; background:transparent; border:1px solid #574936; padding:13px 14px; color:#F1E9D9; font-size:14px; min-height:120px; resize:none;"></textarea>
           <div style="flex:1;"></div>
           <div style="display:flex; gap:10px; margin-top:22px;">
             <button onClick="{{ back }}" style="background:transparent; border:1px solid #574936; color:#B5A788; padding:16px 20px; font-size:11px; letter-spacing:.18em; cursor:pointer; min-height:52px;">Back</button>
@@ -665,8 +665,9 @@ class Component extends DCLogic {
       ? { bg: GOLD, fg: "#2E2418", border: GOLD }
       : { bg: "transparent", fg: "#B5A788", border: "#574936" };
 
-    const confirmLine = s.attend === "no"
-      ? "We'll miss you, " + firstName + " — thank you for telling us. We'll raise a glass in your name."
+    const isDecline = s.attend === "no";
+    const confirmLine = isDecline
+      ? "You'll be dearly missed, " + firstName + ". Though you can't be there, you'll be felt in every moment — we're sending you all our love."
       : firstName + ", " + s.seats + (s.seats === 1 ? " seat is" : " seats are") + " reserved in your name. Details follow at " + (s.email || "your inbox") + ".";
 
     return {
@@ -753,6 +754,10 @@ class Component extends DCLogic {
 
       steps: [1,2,3].map(i => ({ bg: (s.step > i || s.step === 4) ? GOLD : (s.step === i ? "#8A7A5E" : "#463A2A") })),
       isStep1: s.step === 1, isStep2: s.step === 2, isStep3: s.step === 3, isDone: s.step === 4,
+      isDecline,
+      step3Label: isDecline ? "Two of two" : "Three of three",
+      step3Title: isDecline ? "Leave them a little love" : "A word for the newlyweds",
+      step3Placeholder: isDecline ? "A little love note for Shruti & Sam" : "A note for Shruti & Sam",
       name: s.name, email: s.email, phone: s.phone, note: s.note, seats: s.seats, firstName,
       seatsLabel: s.seats === 1 ? "Just me" : s.seats + " of us, including me",
       onName: e => this.setState({ name: e.target.value }),
@@ -767,8 +772,8 @@ class Component extends DCLogic {
       ].map(o => ({ label:o.label, ...chip(s.day === o.key), onClick: () => this.setState({ day: o.key }) })),
       inc: () => this.setState(st => ({ seats: Math.min(6, st.seats + 1) })),
       dec: () => this.setState(st => ({ seats: Math.max(1, st.seats - 1) })),
-      next: () => this.setState(st => ({ step: Math.min(4, st.step + 1) })),
-      back: () => this.setState(st => ({ step: Math.max(1, st.step - 1) })),
+      next: () => this.setState(st => ({ step: st.attend === "no" && st.step === 1 ? 3 : Math.min(4, st.step + 1) })),
+      back: () => this.setState(st => ({ step: st.attend === "no" && st.step === 3 ? 1 : Math.max(1, st.step - 1) })),
       submitting: s.submitting,
       submitLabel: s.submitting ? "Sending…" : "Send response",
       submit: () => {
