@@ -202,6 +202,14 @@
       </sc-for>
     </div>
 
+    <sc-if value="{{ showMehSubTabs }}" hint-placeholder-val="{{ false }}">
+      <div style="display:flex; gap:0; margin-top:10px; border:1px solid #D6C7A8;">
+        <sc-for list="{{ mehSubTabs }}" as="m" hint-placeholder-count="2">
+          <button onClick="{{ m.onClick }}" style="flex:1; background:{{ m.bg }}; color:{{ m.fg }}; border:none; border-right:1px solid #D6C7A8; padding:11px 4px; font-size:10px; letter-spacing:.16em; text-transform:uppercase; cursor:pointer; min-height:42px;">{{ m.label }}</button>
+        </sc-for>
+      </div>
+    </sc-if>
+
     <div data-reveal="3" style="margin-top:18px; background:#F7F1E6; border:1px solid #D6C7A8;">
       <img key="{{ dress.title }}" src="{{ dress.img }}" alt="Dress code" style="width:100%; height:210px; object-fit:cover; display:block; filter:grayscale(1) contrast(1.05); animation:fadeup .6s ease both;" />
       <div key="{{ dress.key }}" style="padding:20px; animation:fadeup .55s ease both;">
@@ -362,7 +370,7 @@ const RSVP_ENDPOINT = "https://script.google.com/macros/s/AKfycbySfxAtg0sbLPbMeB
 
 class Component extends DCLogic {
   state = {
-    dress: 0, trackIdx: 0, entered: false, ytPlaying: false, needsTapForSound: false, activeSection: "invite",
+    dress: 0, mehSide: 0, trackIdx: 0, entered: false, ytPlaying: false, needsTapForSound: false, activeSection: "invite",
     step: 1, name: "", email: "", attend: "yes", seats: 2, day: "both",
     note: "", submitting: false,
   };
@@ -677,9 +685,23 @@ class Component extends DCLogic {
         label: i === 0 ? "Celebration" : i === 1 ? "Mehendi" : "Reception",
         bg: i === s.dress ? "#2E2418" : "transparent",
         fg: i === s.dress ? "#F7F1E6" : "#6B5B42",
-        onClick: () => this.setState({ dress: i }),
+        onClick: () => this.setState({ dress: i, mehSide: 0 }),
       })),
-      dress: dressData[s.dress],
+      showMehSubTabs: s.dress === 1,
+      mehSubTabs: [
+        { label: "Boys' Side", onClick: () => this.setState({ mehSide: 0 }),
+          bg: s.mehSide === 0 ? "#574936" : "transparent", fg: s.mehSide === 0 ? "#F7F1E6" : "#8A7A5E" },
+        { label: "Girls' Side", onClick: () => this.setState({ mehSide: 1 }),
+          bg: s.mehSide === 1 ? "#574936" : "transparent", fg: s.mehSide === 1 ? "#F7F1E6" : "#8A7A5E" },
+      ],
+      dress: s.dress === 1 ? [
+        { key:"meh-boys", title:"Kerala Kasavu", desc:"Mundu or dhoti in cream with gold kasavu border, paired with a crisp white or cream kurta. Classic South Indian elegance for the morning.",
+          img:"https://images.unsplash.com/photo-1594736797933-d0501ba2fe65?w=900&q=80",
+          swatches:[{hex:"#F3EDE0"},{hex:"#F7F3E8"},{hex:"#C9A96A"},{hex:"#E8DCC4"},{hex:"#D4C99A"}], avoid:"bright colours, western wear" },
+        { key:"meh-girls", title:"Festive North Indian", desc:"Bright anarkalis, lehengas, or salwar kameez in vibrant festive colours. This is your moment to bring colour to the morning — the brighter the better.",
+          img:"https://images.unsplash.com/photo-1595407753234-0882f1e77954?w=900&q=80",
+          swatches:[{hex:"#E8A030"},{hex:"#E05080"},{hex:"#40A080"},{hex:"#8050C0"},{hex:"#E06030"}], avoid:"dark colours, black, white" },
+      ][s.mehSide] : dressData[s.dress],
 
       galleryNext: () => this.goGallery(1),
       galleryPrev: () => this.goGallery(-1),
