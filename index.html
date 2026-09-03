@@ -753,7 +753,7 @@ class Component extends DCLogic {
 
       steps: [1,2,3].map(i => ({ bg: (s.step > i || s.step === 4) ? GOLD : (s.step === i ? "#8A7A5E" : "#463A2A") })),
       isStep1: s.step === 1, isStep2: s.step === 2, isStep3: s.step === 3, isDone: s.step === 4,
-      name: s.name, email: s.email, note: s.note, seats: s.seats, firstName,
+      name: s.name, email: s.email, phone: s.phone, note: s.note, seats: s.seats, firstName,
       seatsLabel: s.seats === 1 ? "Just me" : s.seats + " of us, including me",
       onName: e => this.setState({ name: e.target.value }),
       onEmail: e => this.setState({ email: e.target.value }),
