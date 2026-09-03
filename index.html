@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Shruti &amp; Sam — October 30–31, 2026</title>
+<meta name="description" content="Together with the blessings of our families, Shruti and Sam warmly invite you to celebrate their wedding — Friday–Saturday, October 30–31, 2026, Safal Retreat, Bhopal." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://shruti-and-sam.vercel.app/" />
+<meta property="og:title" content="Shruti &amp; Sam — October 30–31, 2026" />
+<meta property="og:description" content="Together with the blessings of our families, Shruti and Sam warmly invite you to celebrate their wedding — Friday–Saturday, October 30–31, 2026, Safal Retreat, Bhopal." />
+<meta property="og:image" content="https://shruti-and-sam.vercel.app/og-image.jpg" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Shruti &amp; Sam — October 30–31, 2026" />
+<meta name="twitter:description" content="Together with the blessings of our families, Shruti and Sam warmly invite you to celebrate their wedding — Friday–Saturday, October 30–31, 2026, Safal Retreat, Bhopal." />
+<meta name="twitter:image" content="https://shruti-and-sam.vercel.app/og-image.jpg" />
+<link rel="icon" href="favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
+<style>
+  html, body { margin:0; padding:0; background:#EDE5D6; }
+  * { box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
+  a { color:#8A6A3B; text-decoration:none; }
+  a:hover { color:#2E2418; }
+  input, button, textarea { font-family:'Jost',sans-serif; }
+  input::placeholder, textarea::placeholder { color:#B3A48A; }
+  @keyframes fadeup { from { opacity:0; transform:translateY(10px); } to { opacity:1; transform:none; } }
+  @keyframes turn { from { transform:rotate(0deg); } to { transform:rotate(360deg); } }
+  @keyframes bob { 0%,100% { transform:translateY(0); opacity:.75; } 50% { transform:translateY(6px); opacity:1; } }
+  @keyframes rule-in { from { transform:scaleX(0); } to { transform:scaleX(1); } }
+  @keyframes letters-in { from { opacity:0; letter-spacing:.42em; } to { opacity:1; letter-spacing:.1em; } }
+  [data-reveal] { opacity:0; transform:translateY(26px); transition:opacity 1s cubic-bezier(.22,.61,.36,1), transform 1s cubic-bezier(.22,.61,.36,1); }
+  [data-reveal][data-in] { opacity:1; transform:none; }
+  [data-reveal="1"] { transition-delay:.08s; }
+  [data-reveal="2"] { transition-delay:.18s; }
+  [data-reveal="3"] { transition-delay:.28s; }
+  [data-reveal="4"] { transition-delay:.38s; }
+  [data-hair] { transform:scaleX(0); transform-origin:center; transition:transform 1.1s cubic-bezier(.22,.61,.36,1) .1s; }
+  [data-hair][data-in] { transform:scaleX(1); }
+  button, a { transition:background .35s ease, color .35s ease, border-color .35s ease, opacity .3s ease; }
+  .ss-gallery-track { scrollbar-width:none; -ms-overflow-style:none; }
+  .ss-gallery-track::-webkit-scrollbar { display:none; }
+  .tl-dot { background:#D6C7A8; transition:background .5s ease, transform .5s ease; }
+  [data-reveal][data-in] .tl-dot { background:#C9A96A; transform:scale(1.15); }
+  @media (prefers-reduced-motion: reduce) {
+    [data-reveal] { opacity:1; transform:none; transition:none; }
+    [data-hair] { transform:scaleX(1); transition:none; }
+  }
+</style>
+</helmet>
+
+<div style="background:#EDE5D6; font-family:'Jost',sans-serif; color:#2E2418; overflow-x:hidden; min-height:100vh;">
+<div style="max-width:480px; margin:0 auto; background:#F7F1E6; box-shadow:0 0 60px rgba(46,36,24,.14);">
+
+  <!-- iOS Safari refuses to grant audible autoplay to a video iframe that renders
+       at 0/1px or opacity:0 — it treats that as a hidden-autoplay abuse pattern and
+       blocks it even after a genuine tap. So this has to be a real, visible-sized,
+       fully-opaque element; we just push it off-screen instead of shrinking it away. -->
+  <div id="yt-player-el" style="position:fixed; top:0; left:-9999px; width:200px; height:113px; opacity:1; pointer-events:none;"></div>
+
+  <sc-if value="{{ notEntered }}" hint-placeholder-val="{{ true }}">
+    <div onClick="{{ enter }}" style="position:fixed; inset:0; z-index:100; background:#2E2418; color:#F1E9D9; display:flex; flex-direction:column; align-items:center; justify-content:center; cursor:pointer; text-align:center; padding:20px;">
+      <img src="logo.png" alt="Shruti and Sam" style="width:64px; height:auto; opacity:.92;" />
+      <div style="display:flex; align-items:center; gap:12px; color:#C9A96A; margin-top:18px;">
+        <span style="width:40px; height:1px; background:#574936;"></span><span>&#10022;</span><span style="width:40px; height:1px; background:#574936;"></span>
+      </div>
+      <div style="font-family:'Cormorant Garamond',serif; font-size:15px; letter-spacing:.3em; text-transform:uppercase; color:#C9A96A; margin-top:18px;">Shruti &amp; Sam</div>
+      <div style="font-family:'Cormorant Garamond',serif; font-style:italic; font-size:26px; margin-top:14px;">Tap to begin</div>
+      <div style="margin-top:10px; font-size:10px; letter-spacing:.2em; text-transform:uppercase; color:#8A7A5E;">with a little music</div>
+    </div>
+  </sc-if>
+
+  <div style="position:fixed; top:0; left:0; right:0; height:2px; background:rgba(214,199,168,.4); z-index:50;">
+    <div id="ss-progress" style="height:2px; width:0%; background:#B08D4F; transition:width .12s linear;"></div>
+  </div>
+
+  <sc-if value="{{ needsTapForSound }}" hint-placeholder-val="{{ false }}">
+    <button onClick="{{ tapForSound }}" style="position:fixed; top:10px; left:50%; transform:translateX(-50%); z-index:60; background:#2E2418; color:#F1E9D9; border:1px solid #C9A96A; padding:10px 18px; font-size:10px; letter-spacing:.18em; text-transform:uppercase; cursor:pointer; border-radius:999px; min-height:38px;">&#9834; Tap for music</button>
+  </sc-if>
+
+  <div style="position:fixed; right:6px; top:50%; transform:translateY(-50%); z-index:45; display:flex; flex-direction:column; align-items:center; gap:12px;">
+    <sc-for list="{{ navDots }}" as="d" hint-placeholder-count="7">
+      <button onClick="{{ d.onClick }}" aria-label="{{ d.label }}" style="width:20px; height:20px; display:flex; align-items:center; justify-content:center; background:none; border:none; cursor:pointer; padding:0;">
+        <span style="width:{{ d.size }}; height:{{ d.size }}; border-radius:50%; background:{{ d.color }}; display:block; transition:all .3s ease;"></span>
+      </button>
+    </sc-for>
+  </div>
+
+  <!-- INVITATION -->
+  <div id="invite" style="padding:22px 20px 34px;">
+    <div style="border:1px solid #D6C7A8; padding:34px 22px 30px; text-align:center;">
+      <img src="logo.png" alt="Shruti and Sam" style="width:56px; height:auto; margin:0 auto 20px; display:block;" />
+      <div style="display:flex; align-items:center; justify-content:center; gap:12px; color:#B08D4F;">
+        <span style="width:44px; height:1px; background:#D6C7A8;"></span>
+        <span style="font-size:11px;">&#10022;</span>
+        <span style="width:44px; height:1px; background:#D6C7A8;"></span>
+      </div>
+
+      <div style="margin-top:22px; font-size:10px; letter-spacing:.3em; text-transform:uppercase; color:#8A7A5E; line-height:2;">Together with the blessings<br />of our families</div>
+
+      <div style="font-family:'Cormorant Garamond',serif; font-weight:400; font-size:56px; letter-spacing:.1em; line-height:1.05; margin-top:20px;">SHRUTI</div>
+      <div style="display:flex; align-items:center; justify-content:center; gap:14px; margin:6px 0;">
+        <span style="width:34px; height:1px; background:#D6C7A8;"></span>
+        <span style="font-family:'Cormorant Garamond',serif; font-style:italic; font-size:24px; color:#8A6A3B;">and</span>
+        <span style="width:34px; height:1px; background:#D6C7A8;"></span>
+      </div>
+      <div style="font-family:'Cormorant Garamond',serif; font-weight:400; font-size:56px; letter-spacing:.1em; line-height:1.05;">SAM</div>
+
+      <div style="margin-top:22px; font-size:10px; letter-spacing:.26em; text-transform:uppercase; color:#8A7A5E; line-height:2.1;">Warmly invite you<br />to celebrate their wedding</div>
+
+      <div style="margin-top:26px; text-align:center;">
+        <div style="font-family:'Cormorant Garamond',serif; font-size:42px; line-height:1;">30 &ndash; 31</div>
+        <div style="font-size:11px; letter-spacing:.18em; margin-top:6px; color:#5C4E38;">OCTOBER 2026</div>
+        <div style="font-size:10px; letter-spacing:.2em; text-transform:uppercase; color:#8A7A5E; margin-top:12px;">Two days of celebration<br />full schedule below</div>
+      </div>
+
+      <div style="margin-top:24px; font-size:12px; letter-spacing:.2em; text-transform:uppercase; line-height:2;">Safal Retreat, Bhopal<br /><span style="color:#8A7A5E; font-size:11px;">Madhya Pradesh, India</span></div>
+
+      <div style="margin-top:26px; font-family:'Cormorant Garamond',serif; font-style:italic; font-size:17px; color:#6B5B42; line-height:1.6;">Your presence is the blessing<br />we wish for.</div>
+
+      <div style="display:flex; flex-direction:column; gap:10px; margin-top:26px;">
+        <button onClick="{{ toRsvp }}" style="background:#2E2418; color:#F7F1E6; border:none; padding:15px; font-size:10px; letter-spacing:.24em; text-transform:uppercase; cursor:pointer; min-height:50px;" style-hover="background:#4A3C28;">Respond to the invitation</button>
+        <button onClick="{{ toPlaylist }}" style="background:transparent; color:#8A6A3B; border:1px solid #D6C7A8; padding:14px; font-size:10px; letter-spacing:.24em; text-transform:uppercase; cursor:pointer; min-height:48px;" style-hover="background:#EFE7D7;">Hear our playlist</button>
+      </div>
+    </div>
+
+    <div id="ss-cue" style="display:flex; flex-direction:column; align-items:center; gap:8px; margin-top:22px; transition:opacity .6s ease;">
+      <div style="font-size:9px; letter-spacing:.3em; text-transform:uppercase; color:#A08D6C;">Scroll</div>
+      <div style="width:1px; height:34px; background:linear-gradient(#C9A96A, transparent); animation:bob 2.4s ease-in-out infinite;"></div>
+    </div>
+  </div>
+
+  <!-- PORTRAIT + COUNTDOWN -->
+  <div style="padding:0 20px 34px;">
+    <div data-reveal style="position:relative; overflow:hidden; height:300px;">
+      <img id="ss-hero-img" data-parallax="0.07" src="hero.jpg" alt="Shruti and Sam" style="width:100%; height:300px; object-fit:cover; object-position:center 12%; display:block; filter:grayscale(1) contrast(1.05); transform:scale(1.1); will-change:transform;" />
+    </div>
+    <div data-reveal="1" style="display:grid; grid-template-columns:repeat(4,1fr); margin-top:20px; border-top:1px solid #D6C7A8; border-bottom:1px solid #D6C7A8;">
+      <sc-for list="{{ countdown }}" as="u" hint-placeholder-count="4">
+        <div style="padding:14px 4px; text-align:center; border-right:1px solid #E4D9C1;">
+          <div style="font-family:'Cormorant Garamond',serif; font-size:26px; line-height:1;">{{ u.value }}</div>
+          <div style="font-size:9px; letter-spacing:.18em; text-transform:uppercase; color:#A08D6C; margin-top:5px;">{{ u.label }}</div>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+
+  <!-- GALLERY -->
+  <div id="gallery" style="padding:6px 0 34px;">
+    <div data-reveal style="text-align:center; font-size:10px; letter-spacing:.32em; text-transform:uppercase; color:#8A6A3B; padding:0 20px;">A few of our favorites</div>
+    <div data-reveal="1" class="ss-gallery-track" style="display:flex; gap:10px; margin-top:18px; overflow-x:auto; scroll-snap-type:x mandatory; padding:0 20px 6px;">
+      <sc-for list="{{ gallery }}" as="p" hint-placeholder-count="11">
+        <img src="{{ p.src }}" alt="Shruti and Sam" style="flex:0 0 76%; scroll-snap-align:center; height:270px; object-fit:cover; object-position:{{ p.pos }}; display:block; filter:grayscale(1) contrast(1.05); border:1px solid #D6C7A8;" />
+      </sc-for>
+    </div>
+    <div style="display:flex; align-items:center; justify-content:center; gap:22px; margin-top:8px;">
+      <button onClick="{{ galleryPrev }}" aria-label="Previous photo" style="background:none; border:none; color:#8A6A3B; font-size:13px; letter-spacing:.1em; cursor:pointer; min-width:40px; min-height:40px; padding:0;">&#10094;</button>
+      <div style="text-align:center; font-size:9px; letter-spacing:.2em; text-transform:uppercase; color:#B3A48A;">Swipe or tap for more</div>
+      <button onClick="{{ galleryNext }}" aria-label="Next photo" style="background:none; border:none; color:#8A6A3B; font-size:13px; letter-spacing:.1em; cursor:pointer; min-width:40px; min-height:40px; padding:0;">&#10095;</button>
+    </div>
+  </div>
+
+  <!-- ORDER OF THE EVENING -->
+  <div id="schedule" style="padding:6px 20px 34px;">
+    <div data-reveal style="text-align:center; font-size:10px; letter-spacing:.32em; text-transform:uppercase; color:#8A6A3B;">Order of the evening</div>
+    <div id="schedule-track" style="position:relative; display:flex; flex-direction:column; margin-top:18px; padding-left:14px;">
+      <div style="position:absolute; left:3px; top:6px; bottom:6px; width:1px; background:#E4D9C1;"></div>
+      <div id="tl-fill" style="position:absolute; left:3px; top:6px; width:1px; height:0%; background:#B08D4F;"></div>
+      <sc-for list="{{ schedule }}" as="e" hint-placeholder-count="4">
+        <div data-reveal style="position:relative; display:flex; gap:16px; padding:16px 0 16px 10px; border-bottom:1px solid #E4D9C1; align-items:baseline;">
+          <div class="tl-dot" style="position:absolute; left:-16px; top:22px; width:9px; height:9px; border-radius:50%; border:2px solid #F7F1E6;"></div>
+          <div style="width:74px; flex-shrink:0; font-size:12px; letter-spacing:.14em; color:#8A6A3B;">{{ e.time }}</div>
+          <div>
+            <div style="font-family:'Cormorant Garamond',serif; font-size:24px; line-height:1.15;">{{ e.name }}</div>
+            <div style="font-size:12px; color:#8A7A5E; margin-top:3px; line-height:1.5;">{{ e.note }}</div>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+
+  <!-- DRESS CODE -->
+  <div id="dress" style="padding:32px 20px; background:#EFE7D7; border-top:1px solid #D6C7A8; border-bottom:1px solid #D6C7A8;">
+    <div data-reveal style="text-align:center; font-size:10px; letter-spacing:.32em; text-transform:uppercase; color:#8A6A3B;">What to wear</div>
+    <div data-reveal="1" style="text-align:center; font-family:'Cormorant Garamond',serif; font-style:italic; font-size:16px; color:#6B5B42; margin-top:8px;">Select an occasion</div>
+
+    <div data-reveal="2" style="display:flex; gap:0; margin-top:18px; border:1px solid #D6C7A8;">
+      <sc-for list="{{ dressTabs }}" as="t" hint-placeholder-count="3">
+        <button onClick="{{ t.onClick }}" style="flex:1; background:{{ t.bg }}; color:{{ t.fg }}; border:none; border-right:1px solid #D6C7A8; padding:13px 4px; font-size:10px; letter-spacing:.16em; text-transform:uppercase; cursor:pointer; min-height:46px;">{{ t.label }}</button>
+      </sc-for>
+    </div>
+
+    <div data-reveal="3" style="margin-top:18px; background:#F7F1E6; border:1px solid #D6C7A8;">
+      <img key="{{ dress.title }}" src="{{ dress.img }}" alt="Dress code" style="width:100%; height:210px; object-fit:cover; display:block; filter:grayscale(1) contrast(1.05); animation:fadeup .6s ease both;" />
+      <div key="{{ dress.key }}" style="padding:20px; animation:fadeup .55s ease both;">
+        <div style="font-family:'Cormorant Garamond',serif; font-size:28px; line-height:1.15;">{{ dress.title }}</div>
+        <div style="font-size:13px; color:#6B5B42; margin-top:8px; line-height:1.7;">{{ dress.desc }}</div>
+        <div style="display:flex; gap:9px; margin-top:18px;">
+          <sc-for list="{{ dress.swatches }}" as="s" hint-placeholder-count="5">
+            <div style="width:34px; height:34px; border-radius:50%; background:{{ s.hex }}; border:1px solid rgba(46,36,24,.16); transition:transform .4s ease;" style-hover="transform:scale(1.12)"></div>
+          </sc-for>
+        </div>
+        <div style="margin-top:16px; padding-top:14px; border-top:1px solid #E4D9C1; font-size:10px; letter-spacing:.16em; text-transform:uppercase; color:#A08D6C;">Kindly avoid &middot; {{ dress.avoid }}</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PLAYLIST -->
+  <div id="playlist" style="padding:32px 20px;">
+    <div data-reveal style="text-align:center; font-size:10px; letter-spacing:.32em; text-transform:uppercase; color:#8A6A3B;">Our playlist</div>
+    <div data-reveal="1" style="text-align:center; font-family:'Cormorant Garamond',serif; font-style:italic; font-size:16px; color:#6B5B42; margin-top:8px;">The songs that got us here</div>
+
+    <div data-reveal="2" style="margin-top:22px; display:flex; flex-direction:column; align-items:center;">
+      <div style="position:relative; width:190px; height:190px; border-radius:50%; overflow:hidden; border:1px solid #D6C7A8; animation:{{ discSpin }};">
+        <img src="{{ track.art }}" alt="{{ track.title }}" style="width:100%; height:100%; object-fit:cover; display:block; filter:grayscale(1) contrast(1.05);" />
+        <div style="position:absolute; top:50%; left:50%; width:34px; height:34px; margin:-17px 0 0 -17px; border-radius:50%; background:#F7F1E6; border:1px solid #D6C7A8;"></div>
+      </div>
+
+      <div key="{{ track.title }}" style="margin-top:20px; text-align:center; animation:fadeup .5s ease both;">
+        <div style="font-family:'Cormorant Garamond',serif; font-size:27px; line-height:1.2;">{{ track.title }}</div>
+        <div style="font-size:11px; letter-spacing:.18em; text-transform:uppercase; color:#8A7A5E; margin-top:6px;">{{ track.artist }}</div>
+        <div style="font-family:'Cormorant Garamond',serif; font-style:italic; font-size:14px; color:#A08D6C; margin-top:6px;">{{ track.note }}</div>
+      </div>
+
+      <div style="width:100%; margin-top:18px; text-align:right; font-size:11px; letter-spacing:.1em; color:#A08D6C;">{{ track.len }}</div>
+
+      <div style="display:flex; align-items:center; gap:26px; margin-top:16px;">
+        <button onClick="{{ prevTrack }}" aria-label="Previous" style="background:none; border:none; color:#5C4E38; font-size:18px; cursor:pointer; min-width:44px; min-height:44px;">&#9664;&#9664;</button>
+        <button onClick="{{ togglePlay }}" aria-label="Play or pause" style="width:56px; height:56px; border-radius:50%; border:1px solid #B08D4F; background:#F7F1E6; color:#2E2418; font-size:15px; cursor:pointer;">{{ playIcon }}</button>
+        <button onClick="{{ nextTrack }}" aria-label="Next" style="background:none; border:none; color:#5C4E38; font-size:18px; cursor:pointer; min-width:44px; min-height:44px;">&#9654;&#9654;</button>
+      </div>
+
+      <a href="{{ track.youtube }}" target="_blank" rel="noopener" style="margin-top:14px; font-size:10px; letter-spacing:.2em; text-transform:uppercase; color:#8A6A3B; border-bottom:1px solid #D6C7A8; padding-bottom:2px;">Open on YouTube</a>
+
+      <div style="font-size:10px; letter-spacing:.2em; text-transform:uppercase; color:#B3A48A; margin-top:14px;">Track {{ trackNo }} of {{ trackTotal }}</div>
+    </div>
+  </div>
+
+  <!-- RSVP -->
+  <div id="rsvp" style="padding:34px 20px; background:#2E2418; color:#F1E9D9;">
+    <div data-reveal style="text-align:center; font-size:10px; letter-spacing:.32em; text-transform:uppercase; color:#C9A96A;">Kindly respond</div>
+    <div data-reveal="1" style="text-align:center; font-family:'Cormorant Garamond',serif; font-style:italic; font-size:16px; color:#B5A788; margin-top:8px;">by 10 October 2026</div>
+
+    <div data-reveal="2" style="display:flex; gap:6px; margin:22px 0 20px;">
+      <sc-for list="{{ steps }}" as="s" hint-placeholder-count="3">
+        <div style="flex:1; height:1px; background:{{ s.bg }}; transition:background .6s ease;"></div>
+      </sc-for>
+    </div>
+
+    <div style="min-height:300px; display:flex; flex-direction:column;">
+
+      <sc-if value="{{ isStep1 }}" hint-placeholder-val="{{ true }}">
+        <div style="flex:1; display:flex; flex-direction:column; animation:fadeup .4s ease both;">
+          <div style="font-size:10px; letter-spacing:.24em; text-transform:uppercase; color:#8A7A5E;">One of three</div>
+          <div style="font-family:'Cormorant Garamond',serif; font-size:32px; line-height:1.15; margin-top:8px;">Will you join us?</div>
+          <input value="{{ name }}" onChange="{{ onName }}" placeholder="Full name" style="margin-top:20px; background:transparent; border:none; border-bottom:1px solid #574936; padding:13px 2px; color:#F1E9D9; font-size:15px; min-height:48px;" />
+          <input value="{{ email }}" onChange="{{ onEmail }}" placeholder="Email address" style="margin-top:6px; background:transparent; border:none; border-bottom:1px solid #574936; padding:13px 2px; color:#F1E9D9; font-size:15px; min-height:48px;" />
+          <div style="display:flex; gap:10px; margin-top:22px;">
+            <sc-for list="{{ attendChoices }}" as="a" hint-placeholder-count="2">
+              <button onClick="{{ a.onClick }}" style="flex:1; background:{{ a.bg }}; color:{{ a.fg }}; border:1px solid {{ a.border }}; padding:14px 8px; font-size:11px; letter-spacing:.16em; text-transform:uppercase; cursor:pointer; min-height:50px;">{{ a.label }}</button>
+            </sc-for>
+          </div>
+          <div style="flex:1;"></div>
+          <button onClick="{{ next }}" style="margin-top:22px; background:#C9A96A; color:#2E2418; border:none; padding:16px; font-size:11px; letter-spacing:.22em; text-transform:uppercase; cursor:pointer; min-height:52px;">Continue</button>
+        </div>
+      </sc-if>
+
+      <sc-if value="{{ isStep2 }}" hint-placeholder-val="{{ true }}">
+        <div style="flex:1; display:flex; flex-direction:column; animation:fadeup .4s ease both;">
+          <div style="font-size:10px; letter-spacing:.24em; text-transform:uppercase; color:#8A7A5E;">Two of three</div>
+          <div style="font-family:'Cormorant Garamond',serif; font-size:32px; line-height:1.15; margin-top:8px;">How many seats, {{ firstName }}?</div>
+          <div style="display:flex; align-items:center; justify-content:center; gap:28px; margin-top:26px;">
+            <button onClick="{{ dec }}" style="width:48px; height:48px; border-radius:50%; border:1px solid #574936; background:transparent; color:#F1E9D9; font-size:20px; cursor:pointer;">&minus;</button>
+            <div style="font-family:'Cormorant Garamond',serif; font-size:64px; line-height:1; min-width:70px; text-align:center;">{{ seats }}</div>
+            <button onClick="{{ inc }}" style="width:48px; height:48px; border-radius:50%; border:1px solid #574936; background:transparent; color:#F1E9D9; font-size:20px; cursor:pointer;">+</button>
+          </div>
+          <div style="text-align:center; font-family:'Cormorant Garamond',serif; font-style:italic; font-size:15px; color:#B5A788; margin-top:10px;">{{ seatsLabel }}</div>
+          <div style="margin-top:24px; font-size:10px; letter-spacing:.2em; text-transform:uppercase; color:#8A7A5E;">Which day(s) will you join us?</div>
+          <div style="display:flex; gap:8px; margin-top:10px;">
+            <sc-for list="{{ dayChoices }}" as="a" hint-placeholder-count="3">
+              <button onClick="{{ a.onClick }}" style="flex:1; background:{{ a.bg }}; color:{{ a.fg }}; border:1px solid {{ a.border }}; padding:13px 6px; font-size:10px; letter-spacing:.1em; text-transform:uppercase; cursor:pointer; min-height:48px;">{{ a.label }}</button>
+            </sc-for>
+          </div>
+          <div style="flex:1;"></div>
+          <div style="display:flex; gap:10px; margin-top:22px;">
+            <button onClick="{{ back }}" style="background:transparent; border:1px solid #574936; color:#B5A788; padding:16px 20px; font-size:11px; letter-spacing:.18em; cursor:pointer; min-height:52px;">Back</button>
+            <button onClick="{{ next }}" style="flex:1; background:#C9A96A; color:#2E2418; border:none; padding:16px; font-size:11px; letter-spacing:.22em; text-transform:uppercase; cursor:pointer; min-height:52px;">Continue</button>
+          </div>
+        </div>
+      </sc-if>
+
+      <sc-if value="{{ isStep3 }}" hint-placeholder-val="{{ true }}">
+        <div style="flex:1; display:flex; flex-direction:column; animation:fadeup .4s ease both;">
+          <div style="font-size:10px; letter-spacing:.24em; text-transform:uppercase; color:#8A7A5E;">Three of three</div>
+          <div style="font-family:'Cormorant Garamond',serif; font-size:32px; line-height:1.15; margin-top:8px;">A word for the newlyweds</div>
+          <textarea value="{{ note }}" onChange="{{ onNote }}" placeholder="A note for Shruti &amp; Sam" style="margin-top:18px; background:transparent; border:1px solid #574936; padding:13px 14px; color:#F1E9D9; font-size:14px; min-height:120px; resize:none;"></textarea>
+          <div style="flex:1;"></div>
+          <div style="display:flex; gap:10px; margin-top:22px;">
+            <button onClick="{{ back }}" style="background:transparent; border:1px solid #574936; color:#B5A788; padding:16px 20px; font-size:11px; letter-spacing:.18em; cursor:pointer; min-height:52px;">Back</button>
+            <button onClick="{{ submit }}" style="flex:1; background:#C9A96A; color:#2E2418; border:none; padding:16px; font-size:11px; letter-spacing:.22em; text-transform:uppercase; cursor:pointer; min-height:52px;">{{ submitLabel }}</button>
+          </div>
+        </div>
+      </sc-if>
+
+      <sc-if value="{{ isDone }}" hint-placeholder-val="{{ true }}">
+        <div style="flex:1; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; animation:fadeup .5s ease both;">
+          <div style="display:flex; align-items:center; gap:12px; color:#C9A96A;">
+            <span style="width:40px; height:1px; background:#574936;"></span><span>&#10022;</span><span style="width:40px; height:1px; background:#574936;"></span>
+          </div>
+          <div style="font-family:'Cormorant Garamond',serif; font-size:38px; line-height:1.1; margin-top:18px;">Thank you</div>
+          <div style="font-size:14px; color:#B5A788; margin-top:12px; line-height:1.7; max-width:290px;">{{ confirmLine }}</div>
+          <button onClick="{{ reset }}" style="margin-top:22px; background:transparent; border:1px solid #574936; color:#B5A788; padding:12px 20px; font-size:10px; letter-spacing:.2em; text-transform:uppercase; cursor:pointer; min-height:44px;">Amend response</button>
+        </div>
+      </sc-if>
+    </div>
+  </div>
+
+  <!-- TRAVEL -->
+  <div id="travel" style="padding:32px 20px;">
+    <div data-reveal style="text-align:center; font-size:10px; letter-spacing:.32em; text-transform:uppercase; color:#8A6A3B;">Travel &amp; stay</div>
+    <div data-reveal="1" style="position:relative; overflow:hidden; height:190px; margin-top:18px;">
+      <img id="ss-travel-img" data-parallax="0.05" src="https://synques-cdn.s3.ap-south-1.amazonaws.com/safalretreat.in/images/banner-1s.avif" alt="Safal Retreat" style="width:100%; height:190px; object-fit:cover; display:block; filter:grayscale(1) contrast(1.05); transform:scale(1.1);" />
+    </div>
+    <div data-reveal="2" style="font-family:'Cormorant Garamond',serif; font-size:26px; margin-top:16px;">Safal Retreat, Bhopal</div>
+    <div data-reveal="2" style="font-size:13px; color:#6B5B42; margin-top:8px; line-height:1.7;">Van Vihar Road, Opp. Lakeview Nursery, Prempura, Bhopal, Madhya Pradesh 462002. About 45 minutes from Raja Bhoj Airport.</div>
+    <div data-reveal="3" style="display:flex; gap:10px; margin-top:16px; flex-wrap:wrap;">
+      <a href="https://maps.app.goo.gl/KUdgr4xjaHS9gRNPA" target="_blank" rel="noopener" style="border:1px solid #2E2418; color:#2E2418; padding:12px 18px; font-size:10px; letter-spacing:.2em; text-transform:uppercase;">Directions</a>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div style="padding:30px 20px 92px; text-align:center; border-top:1px solid #D6C7A8;">
+    <div data-reveal style="font-family:'Cormorant Garamond',serif; font-size:32px; letter-spacing:.08em;">SHRUTI &amp; SAM</div>
+    <div style="font-size:10px; letter-spacing:.24em; text-transform:uppercase; color:#A08D6C; margin-top:10px; line-height:2;">Shruti &middot; +91 75667 70470<br />Sam &middot; +91 73584 25798</div>
+    <button onClick="{{ toTop }}" style="margin-top:20px; background:transparent; border:none; color:#8A6A3B; font-size:9px; letter-spacing:.28em; text-transform:uppercase; cursor:pointer; min-height:44px;">Back to the invitation</button>
+  </div>
+
+  <div id="ss-bar" style="position:fixed; bottom:0; left:0; right:0; z-index:40; display:flex; justify-content:center; padding:0 20px 14px; pointer-events:none; opacity:0; transform:translateY(16px); transition:opacity .5s ease, transform .5s cubic-bezier(.22,.61,.36,1);">
+    <div style="width:100%; max-width:440px; display:flex; gap:8px; background:rgba(46,36,24,.94); padding:9px; pointer-events:auto; box-shadow:0 8px 30px rgba(46,36,24,.22);">
+      <button onClick="{{ toPlaylist }}" style="flex:1; background:transparent; border:1px solid #574936; color:#C9A96A; padding:12px 6px; font-size:9px; letter-spacing:.2em; text-transform:uppercase; cursor:pointer; min-height:44px;">Playlist</button>
+      <button onClick="{{ toRsvp }}" style="flex:1.4; background:#C9A96A; border:none; color:#2E2418; padding:12px 6px; font-size:9px; letter-spacing:.2em; text-transform:uppercase; cursor:pointer; min-height:44px;">{{ barLabel }}</button>
+    </div>
+  </div>
+
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:480,&quot;height&quot;:900}}">
+const RSVP_ENDPOINT = "https://script.google.com/macros/s/AKfycbySfxAtg0sbLPbMeBUIj2NN_DrG7QW043uwgsnHOCCB6QJU2AStn0WpIr5HcYpJmtJV/exec";
+
+class Component extends DCLogic {
+  state = {
+    dress: 0, trackIdx: 0, entered: false, ytPlaying: false, needsTapForSound: false, activeSection: "invite",
+    step: 1, name: "", email: "", attend: "yes", seats: 2, day: "both",
+    note: "", submitting: false,
+  };
+
+  componentDidMount() {
+    this.io = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) { e.target.setAttribute("data-in", "1"); this.io.unobserve(e.target); }
+      });
+    }, { threshold: 0.12, rootMargin: "0px 0px -8% 0px" });
+    this.scanReveals = () => {
+      document.querySelectorAll("[data-reveal]:not([data-in])").forEach(el => this.io.observe(el));
+    };
+    this.scanReveals();
+    this.rescan = setInterval(this.scanReveals, 700);
+
+    this.sectionIds = ["invite","gallery","schedule","dress","playlist","rsvp","travel"];
+
+    this.onScroll = () => {
+      const h = document.documentElement;
+      const max = (h.scrollHeight - h.clientHeight) || 1;
+      const pct = Math.min(100, (h.scrollTop / max) * 100);
+      const bar = document.getElementById("ss-progress");
+      if (bar) bar.style.width = pct + "%";
+
+      document.querySelectorAll("[data-parallax]").forEach(el => {
+        const factor = parseFloat(el.getAttribute("data-parallax")) || 0.06;
+        const rect = el.getBoundingClientRect();
+        const centerOffset = (rect.top + rect.height / 2) - (h.clientHeight / 2);
+        el.style.transform = "translateY(" + (-centerOffset * factor).toFixed(1) + "px) scale(1.1)";
+      });
+
+      const cue = document.getElementById("ss-cue");
+      if (cue) cue.style.opacity = h.scrollTop > 60 ? "0" : "1";
+      const dock = document.getElementById("ss-bar");
+      const rsvp = document.getElementById("rsvp");
+      if (dock) {
+        const r = rsvp && rsvp.getBoundingClientRect();
+        const inRsvp = r && r.top < h.clientHeight * 0.75 && r.bottom > h.clientHeight * 0.25;
+        const show = h.scrollTop > 340 && !inRsvp;
+        dock.style.opacity = show ? "1" : "0";
+        dock.style.transform = show ? "none" : "translateY(16px)";
+        dock.style.visibility = show ? "visible" : "hidden";
+      }
+
+      const sched = document.getElementById("schedule-track");
+      const fill = document.getElementById("tl-fill");
+      if (sched && fill) {
+        const r = sched.getBoundingClientRect();
+        const passed = Math.min(Math.max(h.clientHeight * 0.8 - r.top, 0), r.height);
+        fill.style.height = (r.height ? (passed / r.height) * 100 : 0) + "%";
+      }
+
+      let current = this.sectionIds[0];
+      this.sectionIds.forEach(id => {
+        const el = document.getElementById(id);
+        if (el && el.getBoundingClientRect().top <= 140) current = id;
+      });
+      if (current !== this.state.activeSection) this.setState({ activeSection: current });
+    };
+    window.addEventListener("scroll", this.onScroll, { passive: true });
+    this.onScroll();
+
+    // Skip the countdown re-render while the gallery is auto-gliding — a
+    // full re-render can recreate the strip's DOM nodes mid-animation and
+    // reset scrollLeft, which is the other thing that made the glide jump.
+    this.tick = setInterval(() => { if (!this.galleryAnimating) this.forceUpdate(); }, 1000);
+
+    // Gallery: once the strip scrolls into view, auto-glide through the first
+    // few photos on its own, then hand control back to the visitor's own
+    // swipe/scroll — a little "look, more photos this way" nudge rather than
+    // an animation that fights the user. Cancels instantly on any touch/wheel
+    // input so it never feels like it's fighting a manual swipe.
+    this.galleryAutoPlayed = false;
+    this.galleryAnimRAF = null;
+    const runGalleryAutoScroll = (track) => {
+      if (this.galleryAutoPlayed) return;
+      this.galleryAutoPlayed = true;
+      const start = track.scrollLeft;
+      const end = Math.min(track.scrollWidth - track.clientWidth, track.clientWidth * 3.1);
+      if (end <= start + 4) return;
+      // scroll-snap fights a manual scrollLeft animation frame-by-frame (the
+      // browser keeps trying to snap back to the nearest card), which is what
+      // made this look stuttery. Suspend snapping for the duration of the
+      // glide, and restore it once we hand control back to the visitor.
+      const prevSnap = track.style.scrollSnapType;
+      track.style.scrollSnapType = "none";
+      this.galleryAnimating = true;
+      const dur = 1900;
+      let t0 = null;
+      const cancel = () => {
+        if (this.galleryAnimRAF) { cancelAnimationFrame(this.galleryAnimRAF); this.galleryAnimRAF = null; }
+        track.removeEventListener("touchstart", cancel);
+        track.removeEventListener("wheel", cancel);
+        track.removeEventListener("pointerdown", cancel);
+        track.style.scrollSnapType = prevSnap || "x mandatory";
+        this.galleryAnimating = false;
+      };
+      track.addEventListener("touchstart", cancel, { passive: true, once: true });
+      track.addEventListener("wheel", cancel, { passive: true, once: true });
+      track.addEventListener("pointerdown", cancel, { passive: true, once: true });
+      const ease = (x) => 1 - Math.pow(1 - x, 3);
+      const step = (ts) => {
+        if (t0 === null) t0 = ts;
+        const p = Math.min(1, (ts - t0) / dur);
+        track.scrollLeft = start + (end - start) * ease(p);
+        if (p < 1) { this.galleryAnimRAF = requestAnimationFrame(step); }
+        else { this.galleryAnimRAF = null; cancel(); }
+      };
+      this.galleryAnimRAF = requestAnimationFrame(step);
+    };
+    this.galleryIO = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting && !this.galleryAutoPlayed) {
+          runGalleryAutoScroll(e.target);
+          this.galleryIO.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.55 });
+    this.findGalleryTrack = () => {
+      const track = document.querySelector(".ss-gallery-track");
+      if (track) { this.galleryIO.observe(track); return true; }
+      return false;
+    };
+    if (!this.findGalleryTrack()) {
+      this.galleryFindTimer = setInterval(() => { if (this.findGalleryTrack()) clearInterval(this.galleryFindTimer); }, 300);
+    }
+
+    // Preload the YouTube iframe API script (but do NOT create the player yet)
+    // so that when the visitor taps "Tap to begin", window.YT.Player already
+    // exists and we can construct the player synchronously, right inside that
+    // click handler. Browsers only grant audible autoplay to an iframe whose
+    // navigation happens as a direct, synchronous result of a user gesture —
+    // if we wait for a script to load first, or send a play command to an
+    // iframe that already existed before the tap, the browser can no longer
+    // tell the play request came from the user and blocks the sound.
+    this.ensureYouTubeApiLoading();
+  }
+  componentWillUnmount() {
+    clearInterval(this.tick); clearInterval(this.rescan);
+    clearInterval(this.galleryFindTimer);
+    if (this.galleryAnimRAF) cancelAnimationFrame(this.galleryAnimRAF);
+    if (this.galleryIO) this.galleryIO.disconnect();
+    if (this.io) this.io.disconnect();
+    window.removeEventListener("scroll", this.onScroll);
+  }
+
+  scrollToId(id) {
+    const el = document.getElementById(id);
+    if (el) window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - 8, behavior: "smooth" });
+  }
+
+  allTracks() {
+    return [
+      { title:"Can't Help Falling in Love", artist:"Elvis Presley", note:"The forever classic", len:"3:00", art:"hero.jpg", youtube:"https://www.youtube.com/watch?v=vGJTaP6anOU" },
+      { title:"Until I Found You", artist:"Stephen Sanchez", note:"The one that started it all", len:"3:04", art:"gallery-1.jpg", youtube:"https://www.youtube.com/watch?v=GxldQ9eX2wo" },
+      { title:"DtMF", artist:"Bad Bunny", note:"For when the night gets loud", len:"4:13", art:"gallery-2.jpg", youtube:"https://www.youtube.com/watch?v=Tw08lNebAjE" },
+      { title:"Dai Dai", artist:"Shakira & Burna Boy", note:"Pure dance-floor energy", len:"3:15", art:"gallery-3.jpg", youtube:"https://www.youtube.com/watch?v=fcnDmrtj6Sk" },
+      { title:"Apocalypse", artist:"Cigarettes After Sex", note:"For the quiet moments", len:"4:11", art:"gallery-4.jpg", youtube:"https://www.youtube.com/watch?v=vc1Z7YGEFqc" },
+      { title:"Finding Her", artist:"Kushagra & Vanshika Kashyap", note:"Every search worth making", len:"3:20", art:"gallery-5.jpg", youtube:"https://www.youtube.com/watch?v=PZtSnQBsBW0" },
+      { title:"Tu Mere Agal Bagal Hai", artist:"Mika Singh", note:"For the dance floor", len:"3:47", art:"gallery-6.jpg", youtube:"https://www.youtube.com/watch?v=IxcxmvUhIuA" },
+      { title:"Mwaki", artist:"Zerb ft. Sofiya Nzau", note:"Bring the whole floor together", len:"2:53", art:"hero.jpg", youtube:"https://www.youtube.com/watch?v=5HFLHNkGTGs" },
+    ];
+  }
+
+  go(dir) {
+    const tracks = this.allTracks();
+    const n = tracks.length;
+    const newIdx = (this.state.trackIdx + dir + n) % n;
+    this.setState({ trackIdx: newIdx });
+    this.loadTrack(tracks[newIdx]);
+  }
+
+  // Endless gallery nav: figure out which photo is currently centred in the
+  // strip, then smooth-scroll to the next/previous one — wrapping around at
+  // either end, so pressing "next" on the last photo rolls back to the first.
+  goGallery(dir) {
+    const track = document.querySelector(".ss-gallery-track");
+    if (!track) return;
+    const imgs = Array.from(track.querySelectorAll("img"));
+    const n = imgs.length;
+    if (!n) return;
+    const trackRect = track.getBoundingClientRect();
+    const centerX = trackRect.left + trackRect.width / 2;
+    let idx = 0, best = Infinity;
+    imgs.forEach((img, i) => {
+      const r = img.getBoundingClientRect();
+      const d = Math.abs((r.left + r.width / 2) - centerX);
+      if (d < best) { best = d; idx = i; }
+    });
+    const next = (idx + dir + n) % n;
+    imgs[next].scrollIntoView({ behavior: "smooth", inline: "center", block: "nearest" });
+  }
+
+  extractId(url) {
+    const m = /[?&]v=([^&]+)/.exec(url || "");
+    return m ? m[1] : null;
+  }
+
+  loadTrack(track) {
+    if (!track || !track.youtube || !this.player || !this.player.loadVideoById) return;
+    const id = this.extractId(track.youtube);
+    if (id) this.player.loadVideoById(id);
+  }
+
+  // Kicks off loading the YouTube iframe API script ahead of time, without
+  // creating a player yet. Safe to call more than once (guarded).
+  ensureYouTubeApiLoading() {
+    if (window.YT && window.YT.Player) return;
+    if (window.__ytApiLoading) return;
+    window.__ytApiLoading = true;
+    const tag = document.createElement("script");
+    tag.src = "https://www.youtube.com/iframe_api";
+    document.body.appendChild(tag);
+  }
+
+  // Creates the player and starts playback. Must be called synchronously
+  // from inside a user gesture (the "Tap to begin" click) so the browser
+  // credits the resulting iframe's autoplay to that gesture.
+  startPlayer() {
+    const create = () => {
+      if (!window.YT || !window.YT.Player) { setTimeout(create, 100); return; }
+      const track = this.allTracks()[this.state.trackIdx];
+      const id = this.extractId(track.youtube);
+      if (!id) return;
+      this.player = new window.YT.Player("yt-player-el", {
+        height: "113", width: "200", videoId: id,
+        playerVars: { autoplay: 1, playsinline: 1 },
+        events: {
+          onReady: (e) => {
+            e.target.playVideo();
+            // Some browsers (notably iOS Safari) still refuse audible autoplay
+            // even from a gesture-created iframe. If playback hasn't actually
+            // started shortly after, surface a small tap-to-start control
+            // instead of leaving the visitor with silence and no way to fix it.
+            setTimeout(() => {
+              try {
+                if (e.target.getPlayerState() !== window.YT.PlayerState.PLAYING) {
+                  this.setState({ needsTapForSound: true });
+                }
+              } catch (err) {}
+            }, 1200);
+          },
+          onStateChange: (e) => {
+            const playing = e.data === window.YT.PlayerState.PLAYING;
+            this.setState({ ytPlaying: playing, needsTapForSound: playing ? false : this.state.needsTapForSound });
+            if (e.data === window.YT.PlayerState.ENDED) this.go(1);
+          },
+        },
+      });
+    };
+    if (window.YT && window.YT.Player) { create(); return; }
+    // API script hasn't finished loading yet (rare — only if the visitor tapped
+    // within a second of the page loading). Queue the player creation for the
+    // moment it's ready; still fires inside the same gesture-adjacent tick.
+    if (!window.__ytApiLoading) {
+      window.__ytApiLoading = true;
+      window.onYouTubeIframeAPIReady = create;
+      const tag = document.createElement("script");
+      tag.src = "https://www.youtube.com/iframe_api";
+      document.body.appendChild(tag);
+    } else {
+      const prev = window.onYouTubeIframeAPIReady;
+      window.onYouTubeIframeAPIReady = () => { if (prev) prev(); create(); };
+    }
+  }
+
+  renderVals() {
+    const s = this.state, GOLD = "#C9A96A";
+    const dressData = [
+      { key:"Mehndi", title:"Garden Pastels", desc:"Daytime in the resort garden. Soft cottons, chikankari, pastel linens. Flat shoes for the lawn.",
+        img:"https://images.unsplash.com/photo-1595407753234-0882f1e77954?w=900&q=80",
+        swatches:[{hex:"#E8DCC4"},{hex:"#CFE0D2"},{hex:"#EBD7D1"},{hex:"#D9CFE4"},{hex:"#F3EDE0"}], avoid:"heavy embroidery" },
+      { key:"Sangeet", title:"Midnight & Gold", desc:"An evening of music. Deep jewel tones, quiet shimmer, tailored silhouettes. Dancing is expected.",
+        img:"https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=900&q=80",
+        swatches:[{hex:"#2E2418"},{hex:"#1F3A34"},{hex:"#4A2438"},{hex:"#C9A96A"},{hex:"#8A6A3B"}], avoid:"white, ivory" },
+      { key:"Wedding", title:"Ceremonial Ivory", desc:"Traditional dress, warm neutrals and soft gold. Something you can sit comfortably in through the ceremony.",
+        img:"https://images.unsplash.com/photo-1594736797933-d0501ba2fe65?w=900&q=80",
+        swatches:[{hex:"#F3EDE0"},{hex:"#E0CFA8"},{hex:"#C9A96A"},{hex:"#B98A6B"},{hex:"#8A6A3B"}], avoid:"red, black" },
+    ];
+
+    const tracks = this.allTracks();
+    const track = tracks[s.trackIdx];
+    const firstName = (s.name.trim().split(" ")[0]) || "friend";
+
+    const target = new Date("2026-10-30T13:00:00");
+    const diff = Math.max(0, target - new Date());
+    const pad = n => String(n).padStart(2,"0");
+
+    const chip = (on) => on
+      ? { bg: GOLD, fg: "#2E2418", border: GOLD }
+      : { bg: "transparent", fg: "#B5A788", border: "#574936" };
+
+    const confirmLine = s.attend === "no"
+      ? "We'll miss you, " + firstName + " — thank you for telling us. We'll raise a glass in your name."
+      : firstName + ", " + s.seats + (s.seats === 1 ? " seat is" : " seats are") + " reserved in your name. Details follow at " + (s.email || "your inbox") + ".";
+
+    return {
+      countdown: [
+        { value: Math.floor(diff/864e5), label:"days" },
+        { value: pad(Math.floor(diff/36e5)%24), label:"hours" },
+        { value: pad(Math.floor(diff/6e4)%60), label:"mins" },
+        { value: pad(Math.floor(diff/1e3)%60), label:"secs" },
+      ],
+      schedule: [
+        { time:"1:00 PM", name:"Wedding Lunch", note:"Friday, 30 October — a relaxed lunch to kick things off" },
+        { time:"5:00 PM", name:"Wedding Celebration", note:"Friday, 30 October — the main celebration begins" },
+        { time:"11:00 AM", name:"Mehendi", note:"Saturday, 31 October — henna, music and morning tea" },
+        { time:"8:00 PM", name:"Reception", note:"Saturday, 31 October — dinner, dancing and toasts" },
+      ],
+      dressTabs: dressData.map((x, i) => ({
+        label: x.key,
+        bg: i === s.dress ? "#2E2418" : "transparent",
+        fg: i === s.dress ? "#F7F1E6" : "#6B5B42",
+        onClick: () => this.setState({ dress: i }),
+      })),
+      dress: dressData[s.dress],
+
+      galleryNext: () => this.goGallery(1),
+      galleryPrev: () => this.goGallery(-1),
+
+      track, trackNo: s.trackIdx + 1, trackTotal: tracks.length,
+      discSpin: s.ytPlaying ? "turn 26s linear infinite" : "none",
+      playIcon: s.ytPlaying ? "❙❙" : "▶",
+      nextTrack: () => this.go(1),
+      prevTrack: () => this.go(-1),
+      togglePlay: () => {
+        if (!this.player || !this.player.getPlayerState) return;
+        if (this.player.getPlayerState() === 1) this.player.pauseVideo();
+        else this.player.playVideo();
+      },
+      entered: s.entered,
+      notEntered: !s.entered,
+      enter: () => { this.setState({ entered: true }); this.startPlayer(); },
+      needsTapForSound: s.needsTapForSound,
+      tapForSound: () => {
+        if (this.player && this.player.playVideo) this.player.playVideo();
+        this.setState({ needsTapForSound: false });
+      },
+
+      navDots: [
+        { id:"invite", label:"Invitation" }, { id:"gallery", label:"Gallery" },
+        { id:"schedule", label:"Schedule" }, { id:"dress", label:"Dress code" },
+        { id:"playlist", label:"Playlist" }, { id:"rsvp", label:"RSVP" }, { id:"travel", label:"Travel" },
+      ].map(d => ({
+        ...d,
+        onClick: () => this.scrollToId(d.id),
+        size: s.activeSection === d.id ? "8px" : "5px",
+        color: s.activeSection === d.id ? "#C9A96A" : "rgba(138,106,59,.35)",
+      })),
+
+      gallery: [
+        { src:"gallery-1.jpg", pos:"center 22%" },
+        { src:"gallery-2.jpg", pos:"center" },
+        { src:"gallery-3.jpg", pos:"center" },
+        { src:"gallery-4.jpg", pos:"center" },
+        { src:"gallery-5.jpg", pos:"center" },
+        { src:"gallery-6.jpg", pos:"center" },
+        { src:"gallery-7.jpg", pos:"center 25%" },
+        { src:"gallery-8.jpg", pos:"center 25%" },
+        { src:"gallery-9.jpg", pos:"center 30%" },
+        { src:"gallery-10.jpg", pos:"center 25%" },
+        { src:"gallery-11.jpg", pos:"center 25%" },
+      ],
+
+      steps: [1,2,3].map(i => ({ bg: (s.step > i || s.step === 4) ? GOLD : (s.step === i ? "#8A7A5E" : "#463A2A") })),
+      isStep1: s.step === 1, isStep2: s.step === 2, isStep3: s.step === 3, isDone: s.step === 4,
+      name: s.name, email: s.email, note: s.note, seats: s.seats, firstName,
+      seatsLabel: s.seats === 1 ? "Just me" : s.seats + " of us, including me",
+      onName: e => this.setState({ name: e.target.value }),
+      onEmail: e => this.setState({ email: e.target.value }),
+      onNote: e => this.setState({ note: e.target.value }),
+      attendChoices: [
+        { label:"Joyfully accept", key:"yes" }, { label:"Regretfully decline", key:"no" },
+      ].map(o => ({ label:o.label, ...chip(s.attend === o.key), onClick: () => this.setState({ attend: o.key }) })),
+      dayChoices: [
+        { label:"30th only", key:"30" }, { label:"31st only", key:"31" }, { label:"Both days", key:"both" },
+      ].map(o => ({ label:o.label, ...chip(s.day === o.key), onClick: () => this.setState({ day: o.key }) })),
+      inc: () => this.setState(st => ({ seats: Math.min(6, st.seats + 1) })),
+      dec: () => this.setState(st => ({ seats: Math.max(1, st.seats - 1) })),
+      next: () => this.setState(st => ({ step: Math.min(4, st.step + 1) })),
+      back: () => this.setState(st => ({ step: Math.max(1, st.step - 1) })),
+      submitting: s.submitting,
+      submitLabel: s.submitting ? "Sending…" : "Send response",
+      submit: () => {
+        this.setState({ submitting: true });
+        const dayLabel = s.day === "30" ? "30th only" : s.day === "31" ? "31st only" : "Both days";
+        const payload = {
+          name: s.name, email: s.email, attending: s.attend === "yes" ? "Yes" : "No",
+          seats: s.seats, days: dayLabel,
+          note: s.note, submittedAt: new Date().toISOString(),
+        };
+        const done = () => this.setState({ submitting: false, step: 4 });
+        if (!RSVP_ENDPOINT || RSVP_ENDPOINT.indexOf("PASTE_") === 0) { done(); return; }
+        fetch(RSVP_ENDPOINT, {
+          method: "POST", mode: "no-cors",
+          headers: { "Content-Type": "text/plain;charset=utf-8" },
+          body: JSON.stringify(payload),
+        }).then(done).catch(done);
+      },
+      reset: () => this.setState({ step: 1 }),
+      confirmLine,
+      toRsvp: () => this.scrollToId("rsvp"),
+      toPlaylist: () => this.scrollToId("playlist"),
+      toTop: () => window.scrollTo({ top: 0, behavior: "smooth" }),
+      barLabel: s.step === 4 ? "View your RSVP" : "RSVP",
+    };
+  }
+}
+</script>
+</body>
+</html>
