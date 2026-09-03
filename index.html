@@ -184,6 +184,7 @@
           <div style="width:74px; flex-shrink:0; font-size:12px; letter-spacing:.14em; color:#8A6A3B;">{{ e.time }}</div>
           <div>
             <div style="font-family:'Cormorant Garamond',serif; font-size:24px; line-height:1.15;">{{ e.name }}</div>
+            <div style="font-family:'Cormorant Garamond',serif; font-style:italic; font-size:14px; color:#8A6A3B; margin-top:1px;">{{ e.sub }}</div>
             <div style="font-size:12px; color:#8A7A5E; margin-top:3px; line-height:1.5;">{{ e.note }}</div>
           </div>
         </div>
@@ -678,9 +679,9 @@ class Component extends DCLogic {
         { value: pad(Math.floor(diff/1e3)%60), label:"secs" },
       ],
       schedule: [
-        { time:"5:00 PM", name:"Wedding Celebration", note:"Friday, 30 October — the main celebration begins" },
-        { time:"11:00 AM", name:"Mehendi", note:"Saturday, 31 October — henna, music and morning tea" },
-        { time:"8:00 PM", name:"Reception", note:"Saturday, 31 October — dinner, dancing and toasts" },
+        { time:"4:00 PM", name:"Wedding Celebration", sub:"Two Become One", note:"Friday, 30 October — the main celebration begins" },
+        { time:"11:00 AM", name:"Mehendi", sub:"The Great North-South Showdown", note:"Saturday, 31 October — henna, music and morning tea" },
+        { time:"7:30 PM", name:"Reception", sub:"Royal Affair", note:"Saturday, 31 October — dinner, dancing and toasts" },
       ],
       dressTabs: dressData.map((x, i) => ({
         label: i === 0 ? "Wedding" : i === 1 ? "Mehendi" : "Reception",
