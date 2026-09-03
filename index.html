@@ -274,7 +274,8 @@
           <div style="font-size:10px; letter-spacing:.24em; text-transform:uppercase; color:#8A7A5E;">One of three</div>
           <div style="font-family:'Cormorant Garamond',serif; font-size:32px; line-height:1.15; margin-top:8px;">Will you join us?</div>
           <input value="{{ name }}" onChange="{{ onName }}" placeholder="Full name" style="margin-top:20px; background:transparent; border:none; border-bottom:1px solid #574936; padding:13px 2px; color:#F1E9D9; font-size:15px; min-height:48px;" />
-          <input value="{{ email }}" onChange="{{ onEmail }}" placeholder="Email address" style="margin-top:6px; background:transparent; border:none; border-bottom:1px solid #574936; padding:13px 2px; color:#F1E9D9; font-size:15px; min-height:48px;" />
+          <input value="{{ email }}" onChange="{{ onEmail }}" placeholder="Email address" type="email" style="margin-top:6px; background:transparent; border:none; border-bottom:1px solid #574936; padding:13px 2px; color:#F1E9D9; font-size:15px; min-height:48px;" />
+          <input value="{{ phone }}" onChange="{{ onPhone }}" placeholder="Phone number" type="tel" style="margin-top:6px; background:transparent; border:none; border-bottom:1px solid #574936; padding:13px 2px; color:#F1E9D9; font-size:15px; min-height:48px;" />
           <div style="display:flex; gap:10px; margin-top:22px;">
             <sc-for list="{{ attendChoices }}" as="a" hint-placeholder-count="2">
               <button onClick="{{ a.onClick }}" style="flex:1; background:{{ a.bg }}; color:{{ a.fg }}; border:1px solid {{ a.border }}; padding:14px 8px; font-size:11px; letter-spacing:.16em; text-transform:uppercase; cursor:pointer; min-height:50px;">{{ a.label }}</button>
@@ -371,7 +372,7 @@ const RSVP_ENDPOINT = "https://script.google.com/macros/s/AKfycbySfxAtg0sbLPbMeB
 class Component extends DCLogic {
   state = {
     dress: 0, mehSide: 0, trackIdx: 0, entered: false, ytPlaying: false, needsTapForSound: false, activeSection: "invite",
-    step: 1, name: "", email: "", attend: "yes", seats: 2, day: "both",
+    step: 1, name: "", email: "", phone: "", attend: "yes", seats: 2, day: "both",
     note: "", submitting: false,
   };
 
@@ -756,6 +757,7 @@ class Component extends DCLogic {
       seatsLabel: s.seats === 1 ? "Just me" : s.seats + " of us, including me",
       onName: e => this.setState({ name: e.target.value }),
       onEmail: e => this.setState({ email: e.target.value }),
+      onPhone: e => this.setState({ phone: e.target.value }),
       onNote: e => this.setState({ note: e.target.value }),
       attendChoices: [
         { label:"Joyfully accept", key:"yes" }, { label:"Regretfully decline", key:"no" },
@@ -773,7 +775,7 @@ class Component extends DCLogic {
         this.setState({ submitting: true });
         const dayLabel = s.day === "30" ? "30th only" : s.day === "31" ? "31st only" : "Both days";
         const payload = {
-          name: s.name, email: s.email, attending: s.attend === "yes" ? "Yes" : "No",
+          name: s.name, email: s.email, phone: s.phone, attending: s.attend === "yes" ? "Yes" : "No",
           seats: s.seats, days: dayLabel,
           note: s.note, submittedAt: new Date().toISOString(),
         };
