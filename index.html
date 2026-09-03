@@ -689,9 +689,9 @@ class Component extends DCLogic {
       })),
       showMehSubTabs: s.dress === 1,
       mehSubTabs: [
-        { label: "Boys' Side", onClick: () => this.setState({ mehSide: 0 }),
+        { label: "Groom's Side", onClick: () => this.setState({ mehSide: 0 }),
           bg: s.mehSide === 0 ? "#574936" : "transparent", fg: s.mehSide === 0 ? "#F7F1E6" : "#8A7A5E" },
-        { label: "Girls' Side", onClick: () => this.setState({ mehSide: 1 }),
+        { label: "Bride's Side", onClick: () => this.setState({ mehSide: 1 }),
           bg: s.mehSide === 1 ? "#574936" : "transparent", fg: s.mehSide === 1 ? "#F7F1E6" : "#8A7A5E" },
       ],
       dress: s.dress === 1 ? [
