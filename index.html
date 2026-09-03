@@ -641,9 +641,9 @@ class Component extends DCLogic {
   renderVals() {
     const s = this.state, GOLD = "#C9A96A";
     const dressData = [
-      { key:"Celebration", title:"Rich & Traditional", desc:"Friday evening — the main celebration. Traditional Indian dress, rich jewel tones, embellished silhouettes. This is the one to dress up for.",
+      { key:"Wedding", title:"Rustic Elegance", desc:"Friday evening — the main celebration. Men: black, navy or charcoal suit or tuxedo only. Women: rustic earth-toned western dress or gown. Saree by invitation from the couple only, in rustic tones.",
         img:"https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=900&q=80",
-        swatches:[{hex:"#8B1A2E"},{hex:"#2A5C3F"},{hex:"#C9A96A"},{hex:"#4A2060"},{hex:"#B05A2A"}], avoid:"white, ivory, black" },
+        swatches:[{hex:"#7A9E7E"},{hex:"#6B7A3E"},{hex:"#C4623A"},{hex:"#9E3D20"},{hex:"#7A5040"},{hex:"#C4A882"}], avoid:"whites, ivory, bright colours" },
       { key:"Mehendi", title:"Garden Pastels", desc:"Saturday morning in the resort garden. Soft cottons, chikankari, pastel linens. Flat sandals for the lawn — keep it comfortable and bright.",
         img:"https://images.unsplash.com/photo-1595407753234-0882f1e77954?w=900&q=80",
         swatches:[{hex:"#E8DCC4"},{hex:"#CFE0D2"},{hex:"#EBD7D1"},{hex:"#D9CFE4"},{hex:"#F3EDE0"}], avoid:"heavy embroidery, dark colours" },
@@ -682,7 +682,7 @@ class Component extends DCLogic {
         { time:"8:00 PM", name:"Reception", note:"Saturday, 31 October — dinner, dancing and toasts" },
       ],
       dressTabs: dressData.map((x, i) => ({
-        label: i === 0 ? "Celebration" : i === 1 ? "Mehendi" : "Reception",
+        label: i === 0 ? "Wedding" : i === 1 ? "Mehendi" : "Reception",
         bg: i === s.dress ? "#2E2418" : "transparent",
         fg: i === s.dress ? "#F7F1E6" : "#6B5B42",
         onClick: () => this.setState({ dress: i, mehSide: 0 }),
