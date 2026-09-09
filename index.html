@@ -697,15 +697,20 @@ class Component extends DCLogic {
       ],
       dress: s.dress === 1 ? [
         { key:"meh-boys", title:"Kerala Kasavu", desc:"Mundu or dhoti in cream with gold kasavu border, paired with a crisp white or cream kurta. Classic South Indian elegance for the morning.",
-          img:"https://images.unsplash.com/photo-1594736797933-d0501ba2fe65?w=900&q=80",
+          img:"dress-mehendi-groom.png", imgFull:true,
           swatches:[{hex:"#F3EDE0"},{hex:"#F7F3E8"},{hex:"#C9A96A"},{hex:"#E8DCC4"},{hex:"#D4C99A"}], avoid:"bright colours, western wear" },
         { key:"meh-girls", title:"Festive North Indian", desc:"Bright anarkalis, lehengas, or salwar kameez in vibrant festive colours. This is your moment to bring colour to the morning — the brighter the better.",
-          img:"https://images.unsplash.com/photo-1595407753234-0882f1e77954?w=900&q=80",
+          img:"dress-mehendi-bride.png", imgFull:true,
           swatches:[{hex:"#E8A030"},{hex:"#E05080"},{hex:"#40A080"},{hex:"#8050C0"},{hex:"#E06030"}], avoid:"dark colours, black, white" },
       ][s.mehSide] : dressData[s.dress],
-      dressImgStyle: (s.dress !== 1 && dressData[s.dress].imgFull)
-        ? "width:100%; display:block; animation:fadeup .6s ease both;"
-        : "width:100%; height:210px; object-fit:cover; filter:grayscale(1) contrast(1.05); display:block; animation:fadeup .6s ease both;",
+      dressImgStyle: (() => {
+        const full = s.dress === 1
+          ? [{ imgFull:true }, { imgFull:true }][s.mehSide].imgFull
+          : dressData[s.dress].imgFull;
+        return full
+          ? "width:100%; display:block; animation:fadeup .6s ease both;"
+          : "width:100%; height:210px; object-fit:cover; filter:grayscale(1) contrast(1.05); display:block; animation:fadeup .6s ease both;";
+      })(),
 
       galleryNext: () => this.goGallery(1),
       galleryPrev: () => this.goGallery(-1),
