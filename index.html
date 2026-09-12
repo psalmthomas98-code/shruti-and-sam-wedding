@@ -134,6 +134,13 @@
 
       <div style="display:flex; flex-direction:column; gap:10px; margin-top:26px;">
         <button onClick="{{ toRsvp }}" style="background:#2E2418; color:#F7F1E6; border:none; padding:15px; font-size:10px; letter-spacing:.24em; text-transform:uppercase; cursor:pointer; min-height:50px;" style-hover="background:#4A3C28;">Respond to the invitation</button>
+        <button onClick="{{ addToCalendar }}" style="background:transparent; color:#8A6A3B; border:1px solid #D6C7A8; padding:13px; font-size:9px; letter-spacing:.24em; text-transform:uppercase; cursor:pointer; min-height:44px;">Add to calendar</button>
+      </div>
+
+      <!-- Calendar picker -->
+      <div id="cal-picker" hidden style="margin-top:12px; display:flex; justify-content:center; gap:16px; flex-wrap:wrap;">
+        <a id="cal-google" href="#" target="_blank" style="font-size:9px; letter-spacing:.2em; text-transform:uppercase; color:#8A6A3B; text-decoration:none; border-bottom:1px solid #D6C7A8; padding-bottom:2px;">Google Calendar</a>
+        <a id="cal-ics" href="#" download="shruti-and-sam-wedding.ics" style="font-size:9px; letter-spacing:.2em; text-transform:uppercase; color:#8A6A3B; text-decoration:none; border-bottom:1px solid #D6C7A8; padding-bottom:2px;">Apple / Outlook</a>
       </div>
     </div>
 
@@ -804,6 +811,34 @@ class Component extends DCLogic {
       reset: () => this.setState({ step: 1 }),
       confirmLine,
       toRsvp: () => this.scrollToId("rsvp"),
+
+      addToCalendar: () => {
+        const picker = document.getElementById("cal-picker");
+        picker.hidden = !picker.hidden;
+        if (!picker.hidden) {
+          // Google Calendar link (both days as one event)
+          const gcal = "https://calendar.google.com/calendar/render?action=TEMPLATE" +
+            "&text=Shruti+%26+Sam+Wedding" +
+            "&dates=20261030T160000/20261101T000000" +
+            "&location=Safal+Retreat%2C+Bhopal%2C+Madhya+Pradesh%2C+India" +
+            "&details=Two+days+of+celebration+%E2%80%94+Friday+30+%26+Saturday+31+October+2026";
+          document.getElementById("cal-google").href = gcal;
+
+          // ICS file
+          const ics = [
+            "BEGIN:VCALENDAR", "VERSION:2.0", "CALSCALE:GREGORIAN",
+            "BEGIN:VEVENT",
+            "SUMMARY:Shruti & Sam Wedding",
+            "DTSTART;TZID=Asia/Kolkata:20261030T160000",
+            "DTEND;TZID=Asia/Kolkata:20261101T000000",
+            "LOCATION:Safal Retreat\\, Bhopal\\, Madhya Pradesh\\, India",
+            "DESCRIPTION:Two days of celebration — Friday 30 & Saturday 31 October 2026",
+            "END:VEVENT", "END:VCALENDAR"
+          ].join("\r\n");
+          const blob = new Blob([ics], { type: "text/calendar" });
+          document.getElementById("cal-ics").href = URL.createObjectURL(blob);
+        }
+      },
       toPlaylist: () => this.scrollToId("playlist"),
       toTop: () => window.scrollTo({ top: 0, behavior: "smooth" }),
       barLabel: s.step === 4 ? "View your RSVP" : "RSVP",
