@@ -134,13 +134,6 @@
 
       <div style="display:flex; flex-direction:column; gap:10px; margin-top:26px;">
         <button onClick="{{ toRsvp }}" style="background:#2E2418; color:#F7F1E6; border:none; padding:15px; font-size:10px; letter-spacing:.24em; text-transform:uppercase; cursor:pointer; min-height:50px;" style-hover="background:#4A3C28;">Respond to the invitation</button>
-        <button onClick="{{ addToCalendar }}" style="background:transparent; color:#8A6A3B; border:1px solid #D6C7A8; padding:13px; font-size:9px; letter-spacing:.24em; text-transform:uppercase; cursor:pointer; min-height:44px;">Add to calendar</button>
-      </div>
-
-      <!-- Calendar picker -->
-      <div id="cal-picker" hidden style="margin-top:12px; display:flex; justify-content:center; gap:16px; flex-wrap:wrap;">
-        <a id="cal-google" href="#" target="_blank" style="font-size:9px; letter-spacing:.2em; text-transform:uppercase; color:#8A6A3B; text-decoration:none; border-bottom:1px solid #D6C7A8; padding-bottom:2px;">Google Calendar</a>
-        <a id="cal-ics" href="#" download="shruti-and-sam-wedding.ics" style="font-size:9px; letter-spacing:.2em; text-transform:uppercase; color:#8A6A3B; text-decoration:none; border-bottom:1px solid #D6C7A8; padding-bottom:2px;">Apple / Outlook</a>
       </div>
     </div>
 
@@ -332,7 +325,12 @@
           </div>
           <div style="font-family:'Cormorant Garamond',serif; font-size:38px; line-height:1.1; margin-top:18px;">Thank you</div>
           <div style="font-size:14px; color:#B5A788; margin-top:12px; line-height:1.7; max-width:290px;">{{ confirmLine }}</div>
-          <button onClick="{{ reset }}" style="margin-top:22px; background:transparent; border:1px solid #574936; color:#B5A788; padding:12px 20px; font-size:10px; letter-spacing:.2em; text-transform:uppercase; cursor:pointer; min-height:44px;">Amend response</button>
+          <button onClick="{{ addToCalendar }}" style="margin-top:22px; background:#C9A96A; color:#2E2418; border:none; padding:14px 24px; font-size:10px; letter-spacing:.22em; text-transform:uppercase; cursor:pointer; min-height:48px; width:100%;">Add to calendar</button>
+          <div id="cal-picker" hidden style="margin-top:12px; display:flex; justify-content:center; gap:20px; flex-wrap:wrap; width:100%;">
+            <a id="cal-google" href="#" target="_blank" style="font-size:9px; letter-spacing:.2em; text-transform:uppercase; color:#C9A96A; text-decoration:none; border-bottom:1px solid #574936; padding-bottom:2px;">Google Calendar</a>
+            <a id="cal-ics" href="#" download="shruti-and-sam-wedding.ics" style="font-size:9px; letter-spacing:.2em; text-transform:uppercase; color:#C9A96A; text-decoration:none; border-bottom:1px solid #574936; padding-bottom:2px;">Apple / Outlook</a>
+          </div>
+          <button onClick="{{ reset }}" style="margin-top:16px; background:transparent; border:1px solid #574936; color:#B5A788; padding:12px 20px; font-size:10px; letter-spacing:.2em; text-transform:uppercase; cursor:pointer; min-height:44px;">Amend response</button>
         </div>
       </sc-if>
     </div>
